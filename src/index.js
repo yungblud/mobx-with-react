@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "mobx-react";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import CounterStore from "./store/counter";
-import { Provider } from "mobx-react";
+import RootStore from "./store";
 
-const counter = new CounterStore();
+const root = new RootStore();
 
 ReactDOM.render(
-  <Provider counter={counter}>
+  <Provider {...root}>
     <App />
   </Provider>,
   document.getElementById("root")
